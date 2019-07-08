@@ -1,0 +1,43 @@
+<div class="container" style="margin-top: 70px;">
+
+  <div class="row" *ngIf="dataSubmitted==false">
+
+    <div class="col-sm-8 offset-sm-2">
+
+      <div>
+        <form>
+          <div class="form-group">
+            <label for="customerName">Your Name</label>
+            <input [(ngModel)]="incident.customerName" type="text" name="customerName" class="form-control" id="customerName" aria-describedby="idHelp" placeholder="Enter Name">
+            <small id="idHelp" class="form-text text-muted">Enter your full name</small>
+            <label for="policyNo">Policy No</label>
+            <input [(ngModel)]="incident.policyNo" type="text" name="policyNo" class="form-control" id="policyNo" aria-describedby="idHelp" placeholder="Enter Policy No">
+            <small id="idHelp" class="form-text text-muted">Enter your policy number</small>
+            <label for="mobileNo">Mobile No</label>
+            <input [(ngModel)]="incident.mobileNo" type="text" name="mobileNo" class="form-control" id="mobileNo" aria-describedby="idHelp" placeholder="Enter Mobile No">
+            <small id="idHelp" class="form-text text-muted">Enter your mobile number</small>
+
+            <label for="email">Email</label>
+            <input [(ngModel)]="incident.email" type="text" name="email" class="form-control" id="email" aria-describedby="idHelp" placeholder="Enter Email Id">
+            <small id="idHelp" class="form-text text-muted">Enter your email id</small>
+
+            <label for="location">Incident Location</label>
+            <input [(ngModel)]="incident.location" type="text" name="location" class="form-control" id="location" aria-describedby="idHelp" placeholder="Enter Location">
+            <small id="idHelp" class="form-text text-muted">Enter incident location</small>
+            <label for="detail">Incident Description</label>
+            <textarea [(ngModel)]="incident.detail" name="detail" class="form-control" id="detail" aria-describedby="descHelp">
+                      </textarea>
+            <small id="descHelp" class="form-text text-muted">Enter full detail of incident</small>
+            <label for="photos">Upload Photos</label>
+            <br>
+            <input type="file" id="photos" name="photos" [(ngModel)]="incident.photoPath" />
+          </div>
+        </form>
+        <button class="btn btn-primary" (click)="report()">Report</button>
+      </div>
+    </div>
+  </div>
+<div *ngIf="dataSubmitted==true">
+  <label>{{submitMessage}}</label>
+</div>
+</div>

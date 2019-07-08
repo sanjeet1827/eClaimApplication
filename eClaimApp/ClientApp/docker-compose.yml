@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  angular:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: eclaimapp:v0
+    ports:
+      - "80:80"
